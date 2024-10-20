@@ -1,0 +1,60 @@
+/* Модальное окно */
+.modal {
+    display: none; /* Скрываем по умолчанию */
+    position: fixed; /* Окончательное позиционирование */
+    z-index: 1000; /* Расположение над остальным контентом */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ширина на весь экран */
+    height: 100%; /* Высота на весь экран */
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+}
+
+/* Содержимое модального окна */
+.modal-content {
+    position: absolute; /* Абсолютное позиционирование внутри модального окна */
+    top: 50%; /* Центрируем по вертикали */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translate(-50%, -50%); /* Сдвигаем для точного центрирования */
+    background: white; /* Белый фон для контента модального окна */
+    padding: 20px; /* Поля вокруг контента */
+    border-radius: 8px; /* Закруглённые углы */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень вокруг окна */
+}
+
+/* Кнопка закрытия модального окна */
+.close {
+    color: #aaa; /* Цвет для кнопки закрытия */
+    float: right; /* Выравнивание вправо */
+    font-size: 28px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Цвет при наведении */
+    text-decoration: none; /* Убираем подчеркивание */
+    cursor: pointer; /* Указываем курсор в виде руки */
+}
+
+/* Стиль для кнопок выбора персонажей */
+.buttons-container {
+    display: flex;
+    flex-wrap: wrap; /* Перенос элементов */
+    gap: 10px; /* Пробел между кнопками */
+}
+
+.character-button {
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: white; /* Цвет текста */
+    border: none; /* Убираем границу */
+    padding: 10px; /* Поля */
+    border-radius: 5px; /* Закруглённые углы */
+    cursor: pointer; /* Курсор руки */
+    transition: background-color 0.3s; /* Плавный переход цвета фона */
+}
+
+.character-button:hover {
+    background-color: #0056b3; /* Более тёмный цвет при наведении */
+}
+

@@ -1,0 +1,221 @@
+/* Общие стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: linear-gradient(to bottom, #175d69 23%, #330c43 95%);
+}
+
+.my_hero {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* Центрируем содержимое */
+}
+
+/* Стили для окна */
+.window {
+  width: 800px;
+  /* Ширина окна */
+  height: 600px;
+  /* Высота окна */
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  margin-right: 20px;
+  padding: 20px;
+  overflow-y: auto;
+  margin-left: 500px;
+  /* Добавляем отступ слева для смещения вправо */
+}
+
+/* Стили для прокрутки */
+.window::-webkit-scrollbar {
+  width: 12px;
+  /* Ширина полосы прокрутки */
+  background: rgba(255, 255, 255, 0.1);
+  /* Фон полосы прокрутки */
+  border-radius: 10px;
+  /* Скругляем углы */
+}
+
+/* Стили для ползунка прокрутки */
+.window::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  /* Прозрачный цвет ползунка */
+  border-radius: 10px;
+  /* Скругляем углы ползунка */
+}
+
+/* Убираем стрелочки на прокрутке */
+.window::-webkit-scrollbar-button {
+  display: none;
+  /* Скрываем кнопки прокрутки */
+}
+
+/* Заголовок окна */
+.window-title {
+  margin: 20px 0;
+  /* Отступы для заголовка */
+  font-size: 2rem;
+  /* Увеличенный размер шрифта заголовка */
+  text-transform: uppercase;
+  /* Заглавные буквы */
+}
+
+/* Контейнер для кнопок */
+.buttons-container {
+  display: grid;
+  /* Используем grid для сетки */
+  grid-template-columns: repeat(3, 1fr);
+  /* Три колонки */
+  gap: 15px;
+  /* Отступы между кнопками */
+  padding-bottom: 20px;
+  /* Отступ снизу для прокрутки */
+}
+
+/* Стили для кнопок персонажей */
+.character-button {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgb(219, 198, 251);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  text-align: center;
+  padding: 10px;
+  height: 250px;
+  /* Фиксированная высота кнопки */
+  width: 200px;
+  /* Фиксированная ширина кнопки */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  /* Скрываем часть изображения, если оно выходит за пределы кнопки */
+}
+
+
+/* Эффект при наведении на кнопки */
+.character-button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  /* Увеличиваем прозрачность при наведении */
+  transform: translateY(-2px);
+  /* Эффект поднятия кнопки при наведении */
+}
+
+/* Стили для изображений в кнопках персонажей */
+.character-image {
+  max-width: 100%;
+  max-height: 70%;
+  object-fit: contain;
+  display: block;
+  margin: 10px 0 0 0;
+  /* Отступ сверху */
+  transition: transform 0.3s ease;
+  /* Плавный переход при увеличении */
+}
+
+.character-button:hover .character-image {
+  transform: scale(1.2);
+  /* Увеличиваем изображение до 120% при наведении */
+}
+
+/* Стили для изображения варвара по центру */
+.img {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  /* Смещаем изображение влево */
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.img img {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  opacity: 0.4;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  /* Высота хедера, измените по необходимости */
+  z-index: 1;
+  /* Убедитесь, что хедер над другим контентом */
+}
+
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 15px;
+}
+
+.navbar .logo a {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar .links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 35px;
+}
+
+.navbar .links a {
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 0;
+  transition: 0.2s ease;
+}
+
+.navbar .links a:hover {
+  color: #47b2e4;
+}
