@@ -157,7 +157,7 @@
                         class="user-name-input">
                 </form>
                 <!-- Замена <div> на <button> для правильной семантики -->
-                <a href="#" class="search-button" >
+                <a href="#" class="search-button">
                     <img src="img/free-icon-magnifying-glass-8437963-no-bg-preview (carve.photos).png" alt="search"
                         class="button-search-img">
                 </a>
@@ -170,7 +170,7 @@
                         <div class="window-joinAlns">
                             <span class="close">&times;</span>
                             <div class="joinAlns-header">
-                                <h2>Создать альянс</h2>
+                                <h2>Вступить альянс</h2>
                             </div>
                             <div class="main-joinrAlns">
                                 <h4>Введите ID для вступления в альянс</h4>
@@ -179,7 +179,7 @@
                                         class="ID-registrAlns" maxlength="8" pattern="\d{8}" required>
                                 </form>
                                 <div class="button-container">
-                                    <a href="#" class="join-alns" id="createButton"
+                                    <a href="#" class="join-alns" id="joinButton"
                                         style="pointer-events: none; opacity: 0.5;">
                                         <span class="text-alns">Создать</span>
                                     </a>
@@ -458,6 +458,35 @@
 
 
     <!--Скрипт для ввода ID в поле-->
+    <script>
+        document.getElementById("ID").addEventListener("input", function (event) {
+            this.value = this.value.replace(/[^0-9]/g, ''); // Удаляем все нецифровые символы
+            checkInput(); // Проверяем состояние ввода
+        });
+
+        document.getElementById("nameAlns").addEventListener("input", function () {
+            checkInput(); // Проверяем состояние ввода
+        });
+
+        function checkInput() {
+            const nameAlns = document.getElementById("nameAlns").value;
+            const ID = document.getElementById("ID").value;
+            const createButton = document.getElementById("createButton");
+
+            // Проверяем, что оба поля заполнены и ID состоит из 8 символов
+            if (nameAlns.trim() !== "" && ID.length === 8) {
+                createButton.style.pointerEvents = 'auto'; // Разблокируем кнопку
+                createButton.style.opacity = 1; // Делаем кнопку видимой
+            } else {
+                createButton.style.pointerEvents = 'none'; // Блокируем кнопку
+                createButton.style.opacity = 0.5; // Делаем кнопку полупрозрачной
+            }
+        }
+
+    </script>
+
+
+    <!--ВСТУПЛЕНИЕ Скрипт для ввода ID в поле-->
     <script>
         document.getElementById("ID").addEventListener("input", function (event) {
             this.value = this.value.replace(/[^0-9]/g, ''); // Удаляем все нецифровые символы

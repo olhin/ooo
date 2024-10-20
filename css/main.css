@@ -643,6 +643,26 @@ hr{
     overflow-y: auto;
 }
 
+#joinButton {
+    display: flex;
+    height: 60px; /* Совпадает с высотой поля ввода */
+    width: 120px;
+    cursor: pointer; /* Указатель при наведении */
+    border: 2px solid rgb(219, 198, 251); /* Прозрачный бордер */
+    border-radius: 20px; /* Закругленные углы */
+    background-color: rgba(255, 255, 255, 0.1); /* Прозрачный фон */
+    backdrop-filter: blur(15px); /* Размытие фона */
+    -webkit-backdrop-filter: blur(15px); /* Поддержка WebKit */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Тень для кнопки */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавный эффект при наведении */
+    text-align: center; /* Центровка текста */
+    overflow: hidden; /* Обрезать содержимое, выходящее за границы кнопки */
+    text-decoration: none;
+    margin: 15px;
+    font-size: 25px;
+    color: #e0e0e0;
+}
+
 
 #inventary {
     width: 800px;
